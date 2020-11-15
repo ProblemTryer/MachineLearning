@@ -203,7 +203,7 @@ class FPgrowth:
     def transfer2FrozenDataSet(self, data):
         frozen_data = {}
         for elem in data:
-            frozen_data[frozenset(elem)] = 1
+            frozen_data[frozenset(elem)] = frozen_data.get(frozenset(elem), 0) + 1
         return frozen_data
 
     '''
